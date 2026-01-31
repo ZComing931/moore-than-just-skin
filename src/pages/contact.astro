@@ -1,0 +1,203 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Schema from "../components/Schema.astro";
+
+// In a real app, this would handle form submission via API or Netlify Forms
+---
+
+<Layout
+    title="Contact Moore than Just skin | Book Online"
+    description="Book your appointment today. Located in Riverside, CA."
+>
+    <Header />
+    <Schema />
+
+    <main class="contact-page">
+        <section class="section header-section text-center">
+            <div class="container reveal-on-scroll">
+                <h1 class="text-display">Get In Touch</h1>
+                <p class="lead">
+                    Ready to start your skin journey? We're here to guide you.
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container contact-grid">
+                <!-- Contact Form -->
+                <div class="form-col reveal-on-scroll glass-panel p-lg">
+                    <h2>Send us a Message</h2>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input
+                                type="text"
+                                id="name"
+                                placeholder="Your Name"
+                                required
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="email@example.com"
+                                required
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">Interested Service</label>
+                            <select id="service">
+                                <option>Custom Facial</option>
+                                <option>Chemical Peel</option>
+                                <option>Consultation</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea
+                                id="message"
+                                rows="5"
+                                placeholder="Tell us about your skin concerns..."
+                            ></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-full"
+                            >Send Message</button
+                        >
+                    </form>
+                </div>
+
+                <!-- Info Column -->
+                <div class="info-col reveal-on-scroll">
+                    <div class="booking-cta mb-lg">
+                        <h2>Ready to Book?</h2>
+                        <p>
+                            The fastest way to secure your spot is through our
+                            online booking system.
+                        </p>
+                        <a href="#" class="btn btn-primary btn-lg mt-sm"
+                            >Book Online Now</a
+                        >
+                        <p class="small mt-sm text-muted">
+                            A deposit is required for all new clients.
+                        </p>
+                    </div>
+
+                    <div class="emergency-info bg-cream-100 p-md rounded">
+                        <h3>Emergency & Post-Care</h3>
+                        <p><strong>Experiencing a reaction?</strong></p>
+                        <p>
+                            If you are exploring unexpected swelling or hives
+                            after a treatment, please text our emergency line
+                            immediately.
+                        </p>
+                        <p class="text-gold bold">(951) 555-0199</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>
+
+<style>
+    .header-section {
+        padding-top: var(--space-2xl);
+    }
+    .lead {
+        font-size: 1.25rem;
+        color: var(--color-sage-500);
+    }
+
+    .contact-grid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        gap: var(--space-xl);
+    }
+
+    .glass-panel {
+        padding: var(--space-lg);
+        border-radius: 12px;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: var(--color-sage-800);
+    }
+
+    input,
+    select,
+    textarea {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid var(--color-sage-100);
+        border-radius: 4px;
+        font-family: var(--font-body);
+        font-size: 1rem;
+        background: white;
+        transition: var(--transition-fast);
+    }
+
+    input:focus,
+    textarea:focus {
+        outline: none;
+        border-color: var(--color-sage-500);
+        box-shadow: 0 0 0 3px rgba(141, 163, 153, 0.2);
+    }
+
+    .w-full {
+        width: 100%;
+    }
+
+    .booking-cta {
+        text-align: center;
+        padding: var(--space-md);
+        border: 2px dashed var(--color-gold-400);
+        border-radius: 12px;
+    }
+
+    .btn-lg {
+        padding: 1rem 2.5rem;
+        font-size: 1.1rem;
+    }
+
+    .emergency-info {
+        background: var(--color-cream-100);
+        padding: var(--space-md);
+        border-radius: 8px;
+    }
+
+    .bold {
+        font-weight: 700;
+    }
+    .text-gold {
+        color: var(--color-gold-500);
+    }
+    .mt-sm {
+        margin-top: var(--space-sm);
+    }
+    .mb-lg {
+        margin-bottom: var(--space-lg);
+    }
+
+    @media (max-width: 768px) {
+        .contact-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

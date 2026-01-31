@@ -1,0 +1,198 @@
+---
+import ServiceLayout from "../../layouts/ServiceLayout.astro";
+
+const serviceData = {
+    title: "Custom Facials Riverside | Moore than Just skin",
+    description:
+        "Experience the best facials in Riverside. Our custom holistic treatments cleanse, hydrate, and rejuvenate your skin.",
+    heroImage: "/images/facial.png",
+    serviceName: "Custom Holistic Facials",
+};
+
+const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Facial",
+    provider: {
+        "@type": "BeautySalon",
+        name: "Moore than Just skin",
+    },
+    areaServed: {
+        "@type": "City",
+        name: "Riverside",
+    },
+    hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Facial Treatments",
+        itemListElement: [
+            {
+                "@type": "Offer",
+                itemOffered: {
+                    "@type": "Service",
+                    name: "Signature Glow Facial",
+                    price: "125",
+                    priceCurrency: "USD",
+                },
+            },
+        ],
+    },
+};
+---
+
+<script
+    type="application/ld+json"
+    set:html={JSON.stringify(serviceSchema)}
+    slot="head"
+/>
+
+<ServiceLayout {...serviceData}>
+    <div class="service-detail reveal-on-scroll">
+        <h2>The Moore than Just skin Approach</h2>
+        <p>
+            We don't believe in "one size fits all." Your skin is unique, and
+            your facial should be too. Every treatment begins with a thorough
+            skin analysis to determine exactly what your barrier needs to
+            thrive. Whether you're battling acne, dehydration, or sensitivity,
+            our custom protocols restore balance.
+        </p>
+
+        <div class="feature-grid">
+            <div class="feature-item">
+                <h3>01. Deep Cleanse</h3>
+                <p>
+                    Double cleansing with steam to remove impurities and prep
+                    the skin.
+                </p>
+            </div>
+            <div class="feature-item">
+                <h3>02. Exfoliation</h3>
+                <p>
+                    Enzymatic or manual exfoliation to lift dead skin cells and
+                    reveal glow.
+                </p>
+            </div>
+            <div class="feature-item">
+                <h3>03. Extractions</h3>
+                <p>
+                    Gentle, ultrasonic extractions to clear congestion without
+                    trauma.
+                </p>
+            </div>
+            <div class="feature-item">
+                <h3>04. Massage</h3>
+                <p>
+                    Lymphatic drainage and sculpting massage to lift and depuff.
+                </p>
+            </div>
+        </div>
+
+        <div class="pricing-card glass-panel">
+            <h3>The Signature Glow Facial</h3>
+            <p class="price">From $125</p>
+            <p>60 Minutes | Includes LED Therapy</p>
+            <p>
+                Our most popular treatment. Perfect for first-time clients or
+                monthly maintenance. Includes deep cleanse, custom enzyme,
+                extractions, massage, and hydrojelly mask.
+            </p>
+            <a href="/contact" class="btn btn-primary">Book Now</a>
+        </div>
+
+        <div class="faq-section">
+            <h3>Frequently Asked Questions</h3>
+            <details>
+                <summary>How often should I get a facial?</summary>
+                <p>
+                    For best results, we recommend a monthly maintenance facial
+                    to keep your skin cycle regulated. However, even quarterly
+                    treatments can make a significant difference.
+                </p>
+            </details>
+            <details>
+                <summary>Will I break out after?</summary>
+                <p>
+                    It is possible to experience a small "purge" after a deep
+                    cleanse, but this typically clears within 48 hours, leaving
+                    clear, radiant skin.
+                </p>
+            </details>
+        </div>
+    </div>
+</ServiceLayout>
+
+<style>
+    h2 {
+        margin-bottom: var(--space-md);
+        text-align: center;
+    }
+
+    .service-detail {
+        font-size: 1.1rem;
+        color: var(--color-sage-800);
+    }
+
+    .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: var(--space-md);
+        margin: var(--space-lg) 0;
+    }
+
+    .feature-item h3 {
+        font-size: 1.25rem;
+        color: var(--color-gold-500);
+        margin-bottom: 0.5rem;
+    }
+
+    .pricing-card {
+        border: 1px solid var(--color-sage-100);
+        padding: var(--space-lg);
+        text-align: center;
+        margin: var(--space-xl) 0;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .price {
+        font-size: 2rem;
+        font-family: var(--font-heading);
+        color: var(--color-sage-900);
+        margin: var(--space-sm) 0;
+    }
+
+    /* FAQ Styles */
+    .faq-section {
+        margin-top: var(--space-xl);
+    }
+
+    details {
+        border-bottom: 1px solid var(--color-sage-100);
+        padding: var(--space-sm) 0;
+        cursor: pointer;
+    }
+
+    summary {
+        font-weight: 700;
+        list-style: none; /* Hide default arrow */
+        position: relative;
+        padding-right: 2rem;
+    }
+
+    summary::after {
+        content: "+";
+        position: absolute;
+        right: 0;
+        color: var(--color-gold-500);
+    }
+
+    details[open] summary::after {
+        content: "-";
+    }
+
+    details p {
+        margin-top: var(--space-sm);
+        font-size: 1rem;
+        color: var(--color-text-muted);
+    }
+</style>

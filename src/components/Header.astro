@@ -1,0 +1,122 @@
+---
+const links = [
+    { text: "Services", href: "/services" },
+    { text: "About", href: "/about" },
+    { text: "Location", href: "/location" },
+    { text: "Contact", href: "/contact" },
+];
+---
+
+<header class="header-nav">
+    <div class="container header-container">
+        <a href="/" class="logo">
+            Moore than<br /><span class="logo-sub">just skin</span>
+        </a>
+
+        <nav class="nav-links">
+            {
+                links.map((link) => (
+                    <a href={link.href} class="nav-item">
+                        {link.text}
+                    </a>
+                ))
+            }
+            <a href="/contact" class="btn btn-primary btn-sm">Book Now</a>
+        </nav>
+
+        <!-- Mobile Menu Toggle (Simplified) -->
+        <button class="mobile-toggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</header>
+
+<style>
+    .header-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background: rgba(253, 251, 247, 0.9); /* Glass background */
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+        padding: var(--space-sm) 0;
+        transition: all var(--transition-fast);
+    }
+
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        line-height: 1;
+        color: var(--color-sage-900);
+        font-weight: 700;
+        text-transform: lowercase;
+    }
+
+    .logo-sub {
+        font-size: 0.9rem;
+        color: var(--color-gold-500);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        display: block;
+        margin-left: 2px;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .nav-item {
+        font-size: 0.95rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--color-sage-800);
+        font-weight: 500;
+        position: relative;
+    }
+
+    .nav-item::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background: var(--color-gold-400);
+        transition: width 0.3s ease;
+    }
+
+    .nav-item:hover::after {
+        width: 100%;
+    }
+
+    .btn-sm {
+        padding: 0.5rem 1.25rem;
+        font-size: 0.85rem;
+    }
+
+    .mobile-toggle {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+        .nav-links {
+            display: none; /* TODO: Implement mobile menu state */
+        }
+        .mobile-toggle {
+            display: block;
+        }
+    }
+</style>

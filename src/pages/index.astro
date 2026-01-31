@@ -1,0 +1,445 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Schema from "../components/Schema.astro";
+---
+
+<Layout title="Riverside Esthetician | Facials & Chemical Peels">
+	<Header />
+	<Schema />
+
+	<main>
+		<!-- HERO SECTION -->
+		<section class="hero-section">
+			<div class="container hero-container">
+				<div class="hero-content reveal-on-scroll">
+					<h1 class="text-display mb-md">
+						Reveal Your Skin’s <br />
+						<span class="text-gold italic">True Radiance</span>
+					</h1>
+					<p class="hero-text mb-md">
+						Riverside’s premier destination for advanced chemical
+						peels and holistic facials. Where science meets
+						serenity.
+					</p>
+					<div class="hero-actions">
+						<a href="/contact" class="btn btn-primary"
+							>Book an Appointment</a
+						>
+						<a href="/services" class="btn btn-secondary"
+							>Explore Services</a
+						>
+					</div>
+				</div>
+
+				<div class="hero-visual reveal-on-scroll">
+					<div class="image-wrapper float-animation">
+						<img
+							src="/images/hero.png"
+							alt="Serene esthetician treatment room in Riverside"
+							class="hero-img"
+							width="800"
+							height="600"
+						/>
+						<div class="glass-badge">
+							<span class="stars">★★★★★</span>
+							<span class="label">Riverside's Top Rated</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Scroll Indicator -->
+			<div class="scroll-indicator">
+				<span class="mouse">
+					<span class="wheel"></span>
+				</span>
+			</div>
+		</section>
+
+		<!-- INTRO / ABOUT SUMMARY -->
+		<section class="section bg-sage-light">
+			<div class="container text-center reveal-on-scroll">
+				<h2 class="mb-sm">Moore than Just skin</h2>
+				<p class="max-w-prose mx-auto mb-md">
+					We believe skincare is more than a routine—it's a ritual.
+					Located in the heart of Riverside, we specialize in
+					transformative treatments that target the root of your skin
+					concerns while providing a deeply relaxing escape from the
+					everyday.
+				</p>
+				<a href="/about" class="btn btn-outline">Our Philosophy</a>
+			</div>
+		</section>
+
+		<!-- SERVICES PREVIEW -->
+		<section class="section">
+			<div class="container">
+				<div class="section-header text-center mb-lg reveal-on-scroll">
+					<h2>Curated Treatments</h2>
+					<p>Customized protocols for every skin type.</p>
+				</div>
+
+				<div class="services-grid">
+					<!-- Card 1: Facials -->
+					<a
+						href="/services/facials"
+						class="card service-card reveal-on-scroll"
+					>
+						<div class="card-image">
+							<img
+								src="/images/facial.png"
+								alt="Luxury Facial Treatment"
+							/>
+						</div>
+						<div class="card-content">
+							<h3>Custom Facials</h3>
+							<p>
+								Deep cleansing, hydration, and restoration
+								tailored to your unique skin profile.
+							</p>
+							<span class="link-text">View Menu &rarr;</span>
+						</div>
+					</a>
+
+					<!-- Card 2: Chemical Peels -->
+					<a
+						href="/services/chemical-peels"
+						class="card service-card reveal-on-scroll"
+						style="transition-delay: 0.1s"
+					>
+						<div class="card-image bg-placeholder">
+							<!-- Placeholder for Peel Image -->
+							<div class="overlay"></div>
+						</div>
+						<div class="card-content">
+							<h3>Chemical Peels</h3>
+							<p>
+								Advanced exfoliation to treat acne,
+								pigmentation, and signs of aging.
+							</p>
+							<span class="link-text">Learn More &rarr;</span>
+						</div>
+					</a>
+
+					<!-- Card 3: Add-Ons -->
+					<a
+						href="/services/add-ons"
+						class="card service-card reveal-on-scroll"
+						style="transition-delay: 0.2s"
+					>
+						<div class="card-image bg-placeholder-light">
+							<div class="overlay"></div>
+						</div>
+						<div class="card-content">
+							<h3>Dermaplaning & Add-Ons</h3>
+							<p>
+								Enhance your treatment with LED therapy,
+								dermaplaning, or high-frequency.
+							</p>
+							<span class="link-text"
+								>Enhance Your Glow &rarr;</span
+							>
+						</div>
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- LOCAL SEO BLOCK -->
+		<section class="section bg-cream-100">
+			<div class="container reveal-on-scroll">
+				<div class="location-grid">
+					<div class="location-content">
+						<h2>Serving Riverside & The Inland Empire</h2>
+						<p class="mb-sm">
+							Conveniently located in Riverside, we serve clients
+							from Corona, Redlands, and Moreno Valley. Our
+							private studio offers a sanctuary where you can
+							disconnect and rejuvenate.
+						</p>
+						<ul class="check-list mb-md">
+							<li>By Appointment Only</li>
+							<li>Private Parking Available</li>
+							<li>Quiet, relaxing atmosphere</li>
+						</ul>
+						<a href="/location" class="btn btn-primary"
+							>Get Directions</a
+						>
+					</div>
+					<div class="location-map glass-panel">
+						<!-- Simulated Map Visual -->
+						<div class="map-placeholder">
+							<span>Riverside, CA</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<Footer />
+</Layout>
+
+<style>
+	/* Hero Specifics */
+	.hero-section {
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+		position: relative;
+		padding-top: var(--space-xl); /* Clear header */
+		overflow: hidden;
+	}
+
+	.hero-container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: var(--space-xl);
+		align-items: center;
+	}
+
+	.hero-text {
+		font-size: 1.25rem;
+		color: var(--color-sage-800);
+		max-width: 500px;
+	}
+
+	.hero-actions {
+		display: flex;
+		gap: var(--space-sm);
+	}
+
+	.hero-visual {
+		position: relative;
+	}
+
+	.image-wrapper {
+		position: relative;
+		border-radius: 12px; /* Soft rounding */
+		overflow: hidden;
+		box-shadow: var(--shadow-xl);
+	}
+
+	.hero-img {
+		width: 100%;
+		height: auto;
+		object-fit: cover;
+		display: block;
+		aspect-ratio: 4/5;
+	}
+
+	/* Float Animation */
+	.float-animation {
+		animation: float 6s ease-in-out infinite;
+	}
+
+	@keyframes float {
+		0% {
+			transform: translateY(0px);
+		}
+		50% {
+			transform: translateY(-15px);
+		}
+		100% {
+			transform: translateY(0px);
+		}
+	}
+
+	.glass-badge {
+		position: absolute;
+		bottom: 2rem;
+		left: -2rem;
+		background: var(--glass-bg);
+		backdrop-filter: blur(8px);
+		padding: 1rem 2rem;
+		border-radius: 8px;
+		box-shadow: var(--shadow-lg);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.stars {
+		color: var(--color-gold-500);
+		letter-spacing: 2px;
+	}
+	.label {
+		font-size: 0.8rem;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-weight: 700;
+	}
+
+	/* Scroll Indicator */
+	.scroll-indicator {
+		position: absolute;
+		bottom: 2rem;
+		left: 50%;
+		transform: translateX(-50%);
+		opacity: 0.6;
+	}
+
+	.mouse {
+		width: 26px;
+		height: 42px;
+		border: 2px solid var(--color-sage-800);
+		border-radius: 20px;
+		display: block;
+		position: relative;
+	}
+
+	.wheel {
+		width: 4px;
+		height: 8px;
+		background: var(--color-sage-800);
+		border-radius: 2px;
+		position: absolute;
+		top: 8px;
+		left: 50%;
+		transform: translateX(-50%);
+		animation: scroll 2s infinite;
+	}
+
+	@keyframes scroll {
+		0% {
+			opacity: 1;
+			top: 8px;
+		}
+		100% {
+			opacity: 0;
+			top: 24px;
+		}
+	}
+
+	/* Services Grid */
+	.services-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: var(--space-md);
+	}
+
+	.service-card {
+		display: block;
+		height: 100%;
+		overflow: hidden;
+		padding: 0;
+	}
+
+	.card-image {
+		height: 250px;
+		overflow: hidden;
+		position: relative;
+	}
+
+	.card-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform var(--transition-slow);
+	}
+
+	.service-card:hover .card-image img {
+		transform: scale(1.05); /* Zoom on hover */
+	}
+
+	.card-content {
+		padding: var(--space-md);
+	}
+
+	.link-text {
+		display: inline-block;
+		margin-top: var(--space-sm);
+		color: var(--color-sage-500);
+		font-weight: 700;
+		text-transform: uppercase;
+		font-size: 0.8rem;
+		letter-spacing: 1px;
+	}
+
+	.bg-placeholder {
+		background-color: var(--color-sage-100);
+	}
+	.bg-placeholder-light {
+		background-color: var(--color-cream-200);
+	}
+
+	/* Location Section */
+	.bg-sage-light {
+		background-color: var(--color-sage-50);
+	}
+	.bg-cream-100 {
+		background-color: var(--color-cream-100);
+	}
+
+	.max-w-prose {
+		max-width: 65ch;
+	}
+	.mx-auto {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.check-list {
+		list-style: none;
+		padding-left: 0;
+	}
+
+	.check-list li {
+		padding-left: 1.5rem;
+		position: relative;
+		margin-bottom: 0.5rem;
+	}
+
+	.check-list li::before {
+		content: "✓";
+		color: var(--color-gold-500);
+		position: absolute;
+		left: 0;
+	}
+
+	.location-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: var(--space-lg);
+		align-items: center;
+	}
+
+	.map-placeholder {
+		height: 300px;
+		background-color: var(--color-sage-100);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 8px;
+		color: var(--color-sage-500);
+		font-weight: 700;
+		letter-spacing: 1px;
+	}
+
+	/* Responsive */
+	@media (max-width: 900px) {
+		.hero-container {
+			grid-template-columns: 1fr;
+			text-align: center;
+		}
+		.hero-actions {
+			justify-content: center;
+		}
+		.hero-visual {
+			order: -1;
+			max-width: 500px;
+			margin: 0 auto var(--space-md);
+		}
+		.glass-badge {
+			left: 50%;
+			transform: translateX(-50%);
+			bottom: -1rem;
+			width: max-content;
+		}
+		.location-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

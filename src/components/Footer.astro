@@ -1,0 +1,111 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="footer section">
+    <div class="container footer-grid">
+        <div class="footer-brand">
+            <div class="logo">Moore than<br /><span>just skin</span></div>
+            <p>
+                Riverside's premier destination for advanced skincare, chemical
+                peels, and holistic facials.
+            </p>
+        </div>
+
+        <div class="footer-links">
+            <h3>Services</h3>
+            <ul>
+                <li><a href="/services/facials">Facials</a></li>
+                <li><a href="/services/chemical-peels">Chemical Peels</a></li>
+                <li><a href="/services/add-ons">Add-On Treatments</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-links">
+            <h3>Company</h3>
+            <ul>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/location">Location</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/blog">Skincare Blog</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-contact">
+            <h3>Contact</h3>
+            <p>Riverside, CA</p>
+            <p><a href="tel:+19510000000">(951) 555-0123</a></p>
+            <p>
+                <a href="mailto:hello@morethanjustskin.com"
+                    >hello@morethanjustskin.com</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="footer-bottom container">
+        <p>&copy; {year} Moore than Just skin. All rights reserved.</p>
+    </div>
+</footer>
+
+<style>
+    .footer {
+        background-color: var(--color-sage-900);
+        color: var(--color-cream-100);
+        padding-bottom: var(--space-md);
+    }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr;
+        gap: var(--space-lg);
+        margin-bottom: var(--space-lg);
+    }
+
+    .logo {
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        color: var(--color-cream-50);
+        margin-bottom: var(--space-sm);
+        line-height: 1;
+    }
+
+    .logo span {
+        color: var(--color-gold-400);
+        text-transform: uppercase;
+        font-size: 0.8em;
+        letter-spacing: 2px;
+    }
+
+    h3 {
+        color: var(--color-cream-50);
+        font-size: 1.1rem;
+        margin-bottom: var(--space-sm);
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    li {
+        margin-bottom: 0.5rem;
+    }
+
+    a:hover {
+        color: var(--color-gold-400);
+    }
+
+    .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: var(--space-md);
+        text-align: center;
+        font-size: 0.9rem;
+        color: var(--color-sage-500);
+    }
+
+    @media (max-width: 768px) {
+        .footer-grid {
+            grid-template-columns: 1fr;
+            gap: var(--space-md);
+        }
+    }
+</style>

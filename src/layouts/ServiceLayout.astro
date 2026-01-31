@@ -1,0 +1,86 @@
+---
+import Layout from "./Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+    title: string;
+    description: string;
+    heroImage: string;
+    serviceName: string;
+}
+
+const { title, description, heroImage, serviceName } = Astro.props;
+---
+
+<Layout title={title} description={description}>
+    <Header />
+
+    <main class="service-page">
+        <!-- Service Hero -->
+        <section class="service-hero">
+            <div class="hero-bg" style={`background-image: url(${heroImage});`}>
+            </div>
+            <div class="overlay"></div>
+            <div class="container hero-content text-center reveal-on-scroll">
+                <h1 class="text-display text-light">{serviceName}</h1>
+                <p class="lead text-light">{description}</p>
+                <a href="/contact" class="btn btn-primary">Book Consultation</a>
+            </div>
+        </section>
+
+        <div class="container content-wrapper">
+            <slot />
+        </div>
+    </main>
+
+    <Footer />
+</Layout>
+
+<style>
+    .service-hero {
+        position: relative;
+        height: 60vh;
+        min-height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: var(--space-xl);
+    }
+
+    .hero-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        z-index: -2;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(45, 59, 54, 0.4); /* Sage dark overlay */
+        z-index: -1;
+    }
+
+    .text-light {
+        color: var(--color-cream-50);
+    }
+
+    .lead {
+        font-size: 1.25rem;
+        max-width: 600px;
+        margin: 0 auto var(--space-md);
+    }
+
+    .content-wrapper {
+        max-width: 900px;
+        margin: 0 auto var(--space-xl);
+    }
+</style>

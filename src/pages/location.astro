@@ -1,0 +1,179 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Schema from "../components/Schema.astro";
+---
+
+<Layout
+    title="Esthetician in Riverside, CA | Moore than Just skin"
+    description="Located in the heart of Riverside. Serving the Inland Empire including Corona, Redlands, and Moreno Valley."
+>
+    <Header />
+    <Schema />
+
+    <main class="location-page">
+        <section class="section header-section text-center">
+            <div class="container reveal-on-scroll">
+                <h1 class="text-display">Visit Our Riverside Studio</h1>
+                <p class="lead">A hidden sanctuary in the Inland Empire.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container grid-layout">
+                <div class="content-col reveal-on-scroll">
+                    <h2>Serving Riverside Since 2024</h2>
+                    <p>
+                        Moore than Just skin is proud to call Riverside home. We
+                        understand the unique skin challenges faced by our
+                        Inland Empire clients—from the dry Santa Ana winds to
+                        the intense summer heat. Our treatments are specifically
+                        designed to combat environmental stressors common to our
+                        area.
+                    </p>
+
+                    <div class="location-details glass-panel">
+                        <h3>Studio Location</h3>
+                        <p>123 Serenity Lane<br />Riverside, CA 92501</p>
+                        <p class="small text-muted">
+                            Located near the precipice of the Santa Ana River
+                            trail.
+                        </p>
+
+                        <h3 class="mt-md">Hours</h3>
+                        <ul class="hours-list">
+                            <li><span>Mon - Fri:</span> 9:00 AM - 6:00 PM</li>
+                            <li><span>Sat:</span> 10:00 AM - 4:00 PM</li>
+                            <li><span>Sun:</span> Closed</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="map-col reveal-on-scroll">
+                    <div class="map-frame">
+                        <!-- Placeholder for Google Maps Embed -->
+                        <div class="map-placeholder-graphic">
+                            <span>Interactive Map Loading...</span>
+                        </div>
+                    </div>
+                    <div class="directions-info mt-md">
+                        <h3>Getting Here</h3>
+                        <p>
+                            <strong>From the 91 Freeway:</strong> Exit Central Ave
+                            and head South. We are located in the Canyon Crest shopping
+                            center.
+                        </p>
+                        <p>
+                            <strong>From Moreno Valley (60 Fwy):</strong> Merge onto
+                            I-215 S, take the 60 W, exit University Ave.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Area Section for SEO -->
+        <section class="section bg-sage-light">
+            <div class="container reveal-on-scroll text-center">
+                <h2>Serving the Entire Inland Empire</h2>
+                <div class="cities-grid">
+                    <span class="city-tag">Riverside</span>
+                    <span class="city-tag">Corona</span>
+                    <span class="city-tag">Redlands</span>
+                    <span class="city-tag">Moreno Valley</span>
+                    <span class="city-tag">Fontana</span>
+                    <span class="city-tag">Jurupa Valley</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>
+
+<style>
+    .header-section {
+        padding-top: var(--space-2xl);
+    }
+    .lead {
+        font-size: 1.25rem;
+        color: var(--color-sage-500);
+    }
+
+    .grid-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-xl);
+    }
+
+    .location-details {
+        padding: var(--space-md);
+        margin-top: var(--space-md);
+        border-radius: 8px;
+    }
+
+    .hours-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .hours-list li {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid var(--color-sage-100);
+    }
+
+    .map-frame {
+        height: 400px;
+        background: var(--color-sage-100);
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .map-placeholder-graphic {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #e3ebe5;
+        color: var(--color-sage-500);
+        font-weight: 700;
+    }
+
+    .cities-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--space-sm);
+        margin-top: var(--space-md);
+    }
+
+    .city-tag {
+        background: white;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        color: var(--color-sage-800);
+        box-shadow: var(--shadow-sm);
+    }
+
+    .mt-md {
+        margin-top: var(--space-md);
+    }
+    .bg-sage-light {
+        background-color: var(--color-sage-50);
+    }
+
+    @media (max-width: 768px) {
+        .grid-layout {
+            grid-template-columns: 1fr;
+        }
+        .map-frame {
+            height: 300px;
+        }
+    }
+</style>

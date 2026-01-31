@@ -1,0 +1,61 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "Riverside's Premier Esthetician for Facials and Chemical Peels. Experience Moore than Just skin." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="bg-gradient-animate">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+        <link rel="sitemap" href="/sitemap-index.xml" />
+        
+        <!-- Google Fonts: Playfair Display & Lato -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+		<title>{title} | Moore than Just skin</title>
+        
+        <!-- View Transitions for smooth page loads -->
+        <script>
+            // Simple IntersectionObserver for Scroll Reveals
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.addEventListener('astro:page-load', () => {
+                const elements = document.querySelectorAll('.reveal-on-scroll');
+                elements.forEach(el => observer.observe(el));
+            });
+            
+            // Initial load for non-SPA navigation (if view transitions aren't used yet)
+            document.addEventListener('DOMContentLoaded', () => {
+                const elements = document.querySelectorAll('.reveal-on-scroll');
+                elements.forEach(el => observer.observe(el));
+            });
+        </script>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>

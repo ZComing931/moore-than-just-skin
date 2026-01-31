@@ -1,0 +1,86 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Schema from "../components/Schema.astro";
+---
+
+<Layout
+    title="About Us | Moore than Just skin"
+    description="Meet the esthetician behind Riverside's favorite holistic skin studio."
+>
+    <Header />
+    <Schema />
+
+    <main class="about-page">
+        <section class="section header-section text-center">
+            <div class="container reveal-on-scroll">
+                <h1 class="text-display">Our Philosophy</h1>
+                <p class="lead">Skin health is a journey, not a destination.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container reveal-on-scroll">
+                <div class="prose mx-auto">
+                    <p>
+                        Welcome to <strong>Moore than Just skin</strong>. We are
+                        a boutique skincare studio in Riverside, CA, dedicated
+                        to bridging the gap between clinical results and
+                        spa-like relaxation.
+                    </p>
+                    <p>
+                        Founded on the belief that healthy skin incites
+                        confidence, we approach every treatment with a holistic
+                        mindset. We don't just treat the symptoms; we look at
+                        lifestyle, diet, and home care to build a comprehensive
+                        plan for your glow.
+                    </p>
+                    <blockquote class="pull-quote">
+                        "We believe that taking time for yourself is not a
+                        luxury—it's a necessity."
+                    </blockquote>
+                    <p>
+                        Our studio is a safe space for all skin types and tones.
+                        Whether you are prepping for a wedding or managing
+                        persistent acne, we are honored to be part of your
+                        journey.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>
+
+<style>
+    .header-section {
+        padding-top: var(--space-2xl);
+    }
+    .lead {
+        font-size: 1.25rem;
+        color: var(--color-sage-500);
+    }
+
+    .prose {
+        max-width: 65ch;
+        margin: 0 auto;
+        font-size: 1.1rem;
+        color: var(--color-sage-800);
+    }
+
+    p {
+        margin-bottom: 1.5rem;
+    }
+
+    .pull-quote {
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        color: var(--color-gold-500);
+        text-align: center;
+        border-left: none;
+        margin: 2rem 0;
+        font-style: italic;
+    }
+</style>

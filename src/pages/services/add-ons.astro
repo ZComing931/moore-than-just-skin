@@ -1,0 +1,125 @@
+---
+import ServiceLayout from "../../layouts/ServiceLayout.astro";
+
+const serviceData = {
+    title: "Add-On Treatments | Moore than Just skin",
+    description:
+        "Elevate your facial with LED, Dermaplaning, and High Frequency add-ons.",
+    heroImage: "/images/facial.png", // Reusing facial image for add-ons
+    serviceName: "Treatment Enhancements",
+};
+---
+
+<ServiceLayout {...serviceData}>
+    <div class="service-detail reveal-on-scroll">
+        <div class="addons-list">
+            <div class="addon-item">
+                <div class="addon-content">
+                    <h3>Dermaplaning</h3>
+                    <p>
+                        Manual exfoliation that removes dead skin and peach fuzz
+                        for an ultra-smooth canvas.
+                    </p>
+                </div>
+                <div class="addon-price">+$40</div>
+            </div>
+
+            <div class="addon-item">
+                <div class="addon-content">
+                    <h3>LED Light Therapy</h3>
+                    <p>
+                        Celluma LED therapy to stimulate collagen (Red Light) or
+                        kill acne bacteria (Blue Light).
+                    </p>
+                </div>
+                <div class="addon-price">+$30</div>
+            </div>
+
+            <div class="addon-item">
+                <div class="addon-content">
+                    <h3>High Frequency</h3>
+                    <p>
+                        Zap stubborn breakouts and increase circulation with
+                        oxygenating power.
+                    </p>
+                </div>
+                <div class="addon-price">+$15</div>
+            </div>
+
+            <div class="addon-item">
+                <div class="addon-content">
+                    <h3>Hydrojelly Mask</h3>
+                    <p>
+                        Electrolyte-infused mask that seals in moisture and
+                        calms the skin.
+                    </p>
+                </div>
+                <div class="addon-price">+$25</div>
+            </div>
+        </div>
+
+        <div class="cta-block text-center mt-lg">
+            <p>Add enhancements to any facial booking.</p>
+            <a href="/contact" class="btn btn-primary">Book Now</a>
+        </div>
+    </div>
+</ServiceLayout>
+
+<style>
+    .addons-list {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-md);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .addon-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--space-md);
+        background: white;
+        box-shadow: var(--shadow-sm);
+        border-radius: 8px;
+        transition: transform 0.2s;
+    }
+
+    .addon-item:hover {
+        transform: translateX(5px);
+        border-left: 4px solid var(--color-gold-400);
+    }
+
+    .addon-content h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.25rem;
+    }
+    .addon-content p {
+        font-size: 0.95rem;
+        margin: 0;
+    }
+
+    .addon-price {
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        color: var(--color-sage-800);
+        font-weight: 700;
+        min-width: 80px;
+        text-align: right;
+    }
+
+    .mt-lg {
+        margin-top: var(--space-lg);
+    }
+
+    @media (max-width: 600px) {
+        .addon-item {
+            flex-direction: column;
+            text-align: center;
+            gap: 1rem;
+        }
+        .addon-price {
+            text-align: center;
+        }
+    }
+</style>
