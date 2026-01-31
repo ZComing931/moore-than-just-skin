@@ -1,0 +1,205 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import Schema from "../../components/Schema.astro";
+---
+
+<Layout
+    title="Services Menu | Moore than Just skin"
+    description="Explore our full menu of holistic facials, advanced chemical peels, and skin treatments in Riverside."
+>
+    <Header />
+    <Schema />
+
+    <main class="services-index-page">
+        <section class="section header-section text-center">
+            <div class="container reveal-on-scroll">
+                <h1 class="text-display">Treatment Menu</h1>
+                <p class="lead">
+                    Curated protocols for transformative results.
+                </p>
+            </div>
+        </section>
+
+        <!-- FACIALS -->
+        <section class="section service-preview-section">
+            <div class="container grid-layout reveal-on-scroll">
+                <div class="image-col">
+                    <img
+                        src="/images/facial.png"
+                        alt="Facial Treatment"
+                        class="rounded-shadow"
+                    />
+                </div>
+                <div class="content-col">
+                    <span class="category-label">Holistic Care</span>
+                    <h2>Custom Facials</h2>
+                    <p>
+                        Our signature facials are fully customized to your
+                        skin's immediate needs. We blend relaxation with
+                        clinical efficacy to restore your barrier and reveal
+                        your natural radiance. All facials include deeply
+                        relaxing massage and professional-grade exfoliation.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Signature Glow Facial</li>
+                        <li>Acne Relief Facial</li>
+                        <li>Age-Defying Sculpting Facial</li>
+                    </ul>
+                    <a href="/services/facials" class="btn btn-primary mt-sm"
+                        >View Facial Menu</a
+                    >
+                </div>
+            </div>
+        </section>
+
+        <!-- PEELS -->
+        <section class="section service-preview-section bg-sage-light">
+            <div class="container grid-layout reverse reveal-on-scroll">
+                <div class="image-col">
+                    <img
+                        src="/images/peel.png"
+                        alt="Chemical Peel Application"
+                        class="rounded-shadow"
+                    />
+                </div>
+                <div class="content-col">
+                    <span class="category-label">Advanced Correction</span>
+                    <h2>Chemical Peels</h2>
+                    <p>
+                        Target stubborn hyperpigmentation, deep acne, and
+                        texture with our advanced chemical peel protocols. We
+                        use high-quality acids to safely accelerate cell
+                        turnover and reveal fresh, healthy skin beneath.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Level 1: Refresh Peels (No Downtime)</li>
+                        <li>Level 2: Transform Peels (Light Peeling)</li>
+                        <li>BioRePeel (Advanced TCA)</li>
+                    </ul>
+                    <a
+                        href="/services/chemical-peels"
+                        class="btn btn-primary mt-sm">View Peel Menu</a
+                    >
+                </div>
+            </div>
+        </section>
+
+        <!-- ADD-ONS -->
+        <section class="section text-center">
+            <div class="container reveal-on-scroll">
+                <h2>Enhancements</h2>
+                <p class="max-w-prose mx-auto mb-md">
+                    Elevate any treatment with our curated add-ons. From LED
+                    therapy to Dermaplaning, these extras perform specific
+                    duties to maximize your results.
+                </p>
+                <a href="/services/add-ons" class="btn btn-outline"
+                    >View Enhancements</a
+                >
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>
+
+<style>
+    .header-section {
+        padding-top: var(--space-2xl);
+        padding-bottom: var(--space-lg);
+    }
+    .lead {
+        font-size: 1.25rem;
+        color: var(--color-sage-500);
+    }
+
+    .service-preview-section {
+        padding: var(--space-xl) 0;
+    }
+    .bg-sage-light {
+        background-color: var(--color-sage-50);
+    }
+
+    .grid-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-2xl);
+        align-items: center;
+    }
+
+    .grid-layout.reverse .image-col {
+        order: 2;
+    }
+    .grid-layout.reverse .content-col {
+        order: 1;
+    }
+
+    .rounded-shadow {
+        border-radius: 8px;
+        box-shadow: var(--shadow-lg);
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+    }
+
+    .category-label {
+        display: block;
+        font-family: var(--font-heading);
+        color: var(--color-gold-500);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.9rem;
+        margin-bottom: var(--space-sm);
+    }
+
+    .feature-list {
+        list-style: none;
+        padding: 0;
+        margin: var(--space-md) 0;
+    }
+
+    .feature-list li {
+        padding-left: 1.5rem;
+        position: relative;
+        margin-bottom: 0.5rem;
+        color: var(--color-sage-800);
+    }
+
+    .feature-list li::before {
+        content: "•";
+        color: var(--color-gold-400);
+        position: absolute;
+        left: 0;
+        font-size: 1.5rem;
+        line-height: 1;
+    }
+
+    .mt-sm {
+        margin-top: var(--space-sm);
+    }
+    .max-w-prose {
+        max-width: 60ch;
+    }
+    .mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @media (max-width: 900px) {
+        .grid-layout {
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
+        }
+        .grid-layout.reverse .image-col {
+            order: -1;
+        }
+        .grid-layout.reverse .content-col {
+            order: 1;
+        }
+        .rounded-shadow {
+            height: 300px;
+        }
+    }
+</style>
