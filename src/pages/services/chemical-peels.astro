@@ -6,7 +6,7 @@ const serviceData = {
     description:
         "Safe and effective chemical peels in Riverside to target acne, hyperpigmentation, and fine lines. Reveal your best skin.",
     heroImage: "/images/peel.png",
-    serviceName: "Advanced Chemical Peels",
+    serviceName: "Chemical Peels",
 };
 
 const serviceSchema = {
@@ -31,8 +31,17 @@ const serviceSchema = {
                 "@type": "Offer",
                 itemOffered: {
                     "@type": "Service",
-                    name: "Refresh Peel",
-                    price: "150",
+                    name: "Chemical Peel",
+                    price: "225",
+                    priceCurrency: "USD",
+                },
+            },
+            {
+                "@type": "Offer",
+                itemOffered: {
+                    "@type": "Service",
+                    name: "Cosmo Code Peel",
+                    price: "650",
                     priceCurrency: "USD",
                 },
             },
@@ -49,8 +58,7 @@ const serviceSchema = {
 
 <ServiceLayout {...serviceData}>
     <div class="service-detail reveal-on-scroll">
-        <h2>Resurface & Renew</h2>
-        <p>
+        <p class="intro-text">
             Chemical peels are one of the most effective tools in an
             esthetician's arsenal. By accelerating cell turnover, we can
             dramatically improve texture, tone, and clarity. At Moore than Just
@@ -58,120 +66,253 @@ const serviceSchema = {
             less downtime and safer treatments.
         </p>
 
-        <div class="benefits-grid">
-            <div class="benefit-card">
-                <h3>Acne Control</h3>
+        <div class="services-menu">
+            <!-- Standard Chemical Peel -->
+            <div class="service-item featured">
+                <div class="service-header">
+                    <h3>Chemical Peel</h3>
+                    <div class="service-meta">
+                        <span class="price">$225</span>
+                        <span class="duration">45 min</span>
+                    </div>
+                </div>
                 <p>
-                    Salicylic and Mandelic acids dive deep into pores to kill
-                    bacteria.
+                    We offer a variety of chemical peel treatments in our
+                    office. Chemical peels are used to smooth and improve the
+                    complexion and texture of skin. Chemical peels help to even
+                    out skin tone, reduce fine lines, sun damage, brown spots
+                    and wrinkles by removing the outermost layer of skin. The
+                    Noon Chemical Peel treatment includes a Noon starter kit
+                    valued at $99.
+                </p>
+                <p class="policy-note">
+                    <strong>Note:</strong> There is a $50-100 late cancellation/no
+                    show fee for this service. 24 hours notice is required to cancel
+                    or reschedule your appointment.
                 </p>
             </div>
-            <div class="benefit-card">
-                <h3>Pigmentation</h3>
+
+            <!-- Cosmo Code Peel -->
+            <div class="service-item premium">
+                <span class="premium-badge">Premium Treatment</span>
+                <div class="service-header">
+                    <h3>Cosmo - Code Peel</h3>
+                    <div class="service-meta">
+                        <span class="price">$650</span>
+                        <span class="duration">30 min</span>
+                    </div>
+                </div>
                 <p>
-                    Lighten dark spots and melasma with Tyrosinase inhibitors.
+                    The Complexion Code Plus peel is professional strength. The
+                    initial treatment is done in the office and then at home
+                    with a take home kit. As a follow up this service comes with
+                    a luxurious facial with one of our estheticians between 7-14
+                    days after the treatment.
                 </p>
-            </div>
-            <div class="benefit-card">
-                <h3>Anti-Aging</h3>
-                <p>Stimulate collagen production for firmer, smoother skin.</p>
+                <p class="cta-text">
+                    Not sure if it is right for you? <a
+                        href="/services/consults"
+                        >Book a complimentary consultation first.</a
+                    >
+                </p>
             </div>
         </div>
 
-        <div class="process-steps">
-            <h3>The Peel Process</h3>
-            <ol>
-                <li>
-                    <strong>Consultation:</strong> We assess your skin's readiness.
-                    New clients must start with a facial.
-                </li>
-                <li>
-                    <strong>Prep:</strong> 2 weeks of home care to prepare your barrier.
-                </li>
-                <li>
-                    <strong>Treatment:</strong> The peel is applied. You may feel
-                    a slight tingle.
-                </li>
-                <li>
-                    <strong>Post-Care:</strong> Direct guidance on how to nurture
-                    your peeling skin.
-                </li>
-            </ol>
+        <div class="benefits-section">
+            <h3>What Chemical Peels Treat</h3>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h4>Acne & Scarring</h4>
+                    <p>
+                        Salicylic and Mandelic acids dive deep into pores to
+                        kill bacteria and reduce inflammation.
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <h4>Hyperpigmentation</h4>
+                    <p>
+                        Lighten dark spots and melasma with Tyrosinase
+                        inhibitors and targeted brightening agents.
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <h4>Anti-Aging</h4>
+                    <p>
+                        Stimulate collagen production for firmer, smoother skin
+                        and reduced fine lines.
+                    </p>
+                </div>
+            </div>
         </div>
 
-        <div class="pricing-card glass-panel">
-            <h3>Level 1: The Refresh Peel</h3>
-            <p class="price">$150</p>
-            <p>No downtime. Instant glow. Perfect before events.</p>
-            <hr
-                style="margin: 1rem 0; border: 0; border-top: 1px solid var(--color-sage-100);"
-            />
-            <h3>Level 2: The Transform Peel</h3>
-            <p class="price">$200</p>
-            <p>3-5 days of light peeling. Targets deeper issues.</p>
-            <br />
-            <a href="/contact" class="btn btn-primary">Book Consultation</a>
+        <div class="cta-block">
+            <a href="/contact" class="btn btn-primary">Book Your Peel</a>
+            <a href="/services/consults" class="btn btn-outline"
+                >Schedule Consultation</a
+            >
         </div>
     </div>
 </ServiceLayout>
 
 <style>
-    h2 {
+    .intro-text {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto var(--space-xl);
+        font-size: 1.1rem;
+    }
+
+    .services-menu {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-md);
+        margin-bottom: var(--space-xl);
+    }
+
+    .service-item {
+        background: white;
+        padding: var(--space-lg);
+        border-radius: 8px;
+        box-shadow: var(--shadow-sm);
+        border-left: 4px solid var(--color-sage-100);
+        position: relative;
+        transition: all var(--transition-fast);
+    }
+
+    .service-item:hover {
+        transform: translateX(5px);
+        box-shadow: var(--shadow-md);
+    }
+
+    .service-item.featured {
+        border-left-color: var(--color-gold-400);
+    }
+
+    .service-item.premium {
+        border-left-color: var(--color-gold-500);
+        background: linear-gradient(
+            135deg,
+            var(--color-cream-50) 0%,
+            white 100%
+        );
+    }
+
+    .premium-badge {
+        position: absolute;
+        top: var(--space-sm);
+        right: var(--space-sm);
+        background: var(--color-gold-500);
+        color: white;
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 700;
+    }
+
+    .service-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: var(--space-sm);
+        flex-wrap: wrap;
+        gap: var(--space-sm);
+    }
+
+    .service-header h3 {
+        margin: 0;
+        color: var(--color-sage-900);
+    }
+
+    .service-meta {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.25rem;
+    }
+
+    .price {
+        font-family: var(--font-heading);
+        font-size: 1.25rem;
+        color: var(--color-gold-500);
+        font-weight: 700;
+    }
+
+    .duration {
+        font-size: 0.9rem;
+        color: var(--color-text-muted);
+    }
+
+    .policy-note {
+        margin-top: var(--space-sm);
+        padding: var(--space-sm);
+        background: var(--color-cream-100);
+        border-radius: 4px;
+        font-size: 0.9rem;
+    }
+
+    .cta-text {
+        margin-top: var(--space-sm);
+        font-style: italic;
+    }
+
+    .cta-text a {
+        color: var(--color-sage-800);
+        text-decoration: underline;
+    }
+
+    .benefits-section {
+        margin: var(--space-xl) 0;
+        padding: var(--space-lg);
+        background: var(--color-sage-50);
+        border-radius: 8px;
+    }
+
+    .benefits-section h3 {
         text-align: center;
         margin-bottom: var(--space-md);
     }
 
     .benefits-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: var(--space-md);
-        margin: var(--space-lg) 0;
     }
 
     .benefit-card {
-        background: var(--color-sage-50);
+        background: white;
         padding: var(--space-md);
         border-radius: 8px;
         text-align: center;
     }
 
-    .benefit-card h3 {
+    .benefit-card h4 {
         color: var(--color-sage-800);
-        font-size: 1.1rem;
-    }
-
-    .process-steps {
-        background: var(--color-cream-100);
-        padding: var(--space-lg);
-        border-radius: 8px;
-        margin: var(--space-xl) 0;
-    }
-
-    ol {
-        margin-left: 1.5rem;
-    }
-    li {
         margin-bottom: 0.5rem;
-        padding-left: 0.5rem;
     }
 
-    .pricing-card {
+    .cta-block {
         text-align: center;
-        max-width: 500px;
-        margin: 0 auto;
         padding: var(--space-lg);
+        display: flex;
+        gap: var(--space-sm);
+        justify-content: center;
+        flex-wrap: wrap;
     }
 
-    .price {
-        font-family: var(--font-heading);
-        font-size: 1.5rem;
-        color: var(--color-gold-500);
-        font-weight: 700;
-    }
-
-    @media (max-width: 768px) {
-        .benefits-grid {
-            grid-template-columns: 1fr;
+    @media (max-width: 600px) {
+        .service-header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .service-meta {
+            align-items: flex-start;
+        }
+        .premium-badge {
+            position: static;
+            display: inline-block;
+            margin-bottom: var(--space-sm);
         }
     }
 </style>

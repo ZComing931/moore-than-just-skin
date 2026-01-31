@@ -6,7 +6,7 @@ const serviceData = {
     description:
         "Experience the best facials in Riverside. Our custom holistic treatments cleanse, hydrate, and rejuvenate your skin.",
     heroImage: "/images/facial.png",
-    serviceName: "Custom Holistic Facials",
+    serviceName: "Facial Treatments",
 };
 
 const serviceSchema = {
@@ -29,8 +29,17 @@ const serviceSchema = {
                 "@type": "Offer",
                 itemOffered: {
                     "@type": "Service",
-                    name: "Signature Glow Facial",
-                    price: "125",
+                    name: "Custom Fresh Facial",
+                    price: "185",
+                    priceCurrency: "USD",
+                },
+            },
+            {
+                "@type": "Offer",
+                itemOffered: {
+                    "@type": "Service",
+                    name: "Dermaplaning Facial",
+                    price: "150",
                     priceCurrency: "USD",
                 },
             },
@@ -47,152 +56,218 @@ const serviceSchema = {
 
 <ServiceLayout {...serviceData}>
     <div class="service-detail reveal-on-scroll">
-        <h2>The Moore than Just skin Approach</h2>
-        <p>
+        <p class="intro-text">
             We don't believe in "one size fits all." Your skin is unique, and
-            your facial should be too. Every treatment begins with a thorough
-            skin analysis to determine exactly what your barrier needs to
-            thrive. Whether you're battling acne, dehydration, or sensitivity,
-            our custom protocols restore balance.
+            your facial should be too. Every treatment is customized to what
+            your skin needs right now. We proudly use the
+            <strong>Noon Triple MCH machine</strong> to optimize product penetration
+            and results.
         </p>
 
-        <div class="feature-grid">
-            <div class="feature-item">
-                <h3>01. Deep Cleanse</h3>
+        <div class="services-menu">
+            <!-- Custom Fresh Facial -->
+            <div class="service-item">
+                <div class="service-header">
+                    <h3>Custom Fresh Facial</h3>
+                    <div class="service-meta">
+                        <span class="price">$185</span>
+                        <span class="duration">1 hr 30 min</span>
+                    </div>
+                </div>
                 <p>
-                    Double cleansing with steam to remove impurities and prep
+                    Enjoy a custom facial created by our esthetician and based
+                    on your skin's needs. We carry a variety of facial treatment
+                    options and skin care products. We proudly use the Noon
+                    Triple MCH machine in conjunction with many of our facial
+                    treatments to optimize the amount of product penetrated into
                     the skin.
                 </p>
             </div>
-            <div class="feature-item">
-                <h3>02. Exfoliation</h3>
+
+            <!-- Dermaplaning Facial -->
+            <div class="service-item featured">
+                <div class="service-header">
+                    <h3>Dermaplaning Facial</h3>
+                    <div class="service-meta">
+                        <span class="price">$150</span>
+                        <span class="duration">1 hr</span>
+                    </div>
+                </div>
                 <p>
-                    Enzymatic or manual exfoliation to lift dead skin cells and
-                    reveal glow.
+                    Dermaplaning is an exfoliation treatment carried out by
+                    scraping off the top layer of dull or dead skin cells and
+                    vellus hair (aka peach fuzz). This treatment helps to
+                    minimize the appearance of acne scars, fine lines and
+                    wrinkles by skimming off the surface layer of skin that is
+                    often dry and/or dull. Dermaplaning leaves you with a
+                    smoother, healthier and brighter complexion.
                 </p>
             </div>
-            <div class="feature-item">
-                <h3>03. Extractions</h3>
+
+            <!-- Acne Facial -->
+            <div class="service-item">
+                <div class="service-header">
+                    <h3>Acne Facial</h3>
+                    <div class="service-meta">
+                        <span class="price">$125</span>
+                        <span class="duration">55 min</span>
+                    </div>
+                </div>
                 <p>
-                    Gentle, ultrasonic extractions to clear congestion without
-                    trauma.
+                    Our acne facial is also known as a "Deep Cleansing Facial".
+                    This treatment purifies the skin via multiple rounds of
+                    extractions to unclog the pores and via exfoliating
+                    cleansers and/or chemical peels to help remove the outermost
+                    layer of dead and/or dull skin cells. Ingredients used may
+                    include salicylic acid or glycolic acid which are meant to
+                    speed up cell turnover, unclog pores at the source and keep
+                    future breakouts from forming.
                 </p>
             </div>
-            <div class="feature-item">
-                <h3>04. Massage</h3>
+
+            <!-- HydraGlow Facial -->
+            <div class="service-item">
+                <div class="service-header">
+                    <h3>HydraGlow Facial</h3>
+                    <div class="service-meta">
+                        <span class="price">$99 Members / $120 Regular</span>
+                        <span class="duration">45 min</span>
+                    </div>
+                </div>
                 <p>
-                    Lymphatic drainage and sculpting massage to lift and depuff.
+                    Our HydraGlow Facial is a rehydrating treatment that
+                    improves skin tone and texture by removing dead skin cells
+                    and providing deep nourishment. We incorporate our Noon
+                    Triple MCH machine which uses cryotherapy and mesoporation
+                    to increase the amount of inserted substance within the skin
+                    and allows deep skin penetration of substances that
+                    stimulate collagen production or treat inflammatory
+                    conditions.
+                </p>
+            </div>
+
+            <!-- Express Facial -->
+            <div class="service-item">
+                <div class="service-header">
+                    <h3>Express Facial</h3>
+                    <div class="service-meta">
+                        <span class="price">$75</span>
+                        <span class="duration">40 min</span>
+                    </div>
+                </div>
+                <p>
+                    An express facial that will remove all surface dirt and
+                    impurities leaving a radiant and balanced complexion. The
+                    treatment will include a detailed consultation to go over
+                    concerns, goals, current skin regimen, professional product
+                    recommendations and suggested paired services (lasers,
+                    microneedling etc).
+                </p>
+            </div>
+
+            <!-- Back Facial -->
+            <div class="service-item">
+                <div class="service-header">
+                    <h3>Back Facial</h3>
+                    <div class="service-meta">
+                        <span class="price">$125</span>
+                        <span class="duration">45 min</span>
+                    </div>
+                </div>
+                <p>
+                    A treatment specified to treating the back. Increases blood
+                    flow, hydration and complexion.
                 </p>
             </div>
         </div>
 
-        <div class="pricing-card glass-panel">
-            <h3>The Signature Glow Facial</h3>
-            <p class="price">From $125</p>
-            <p>60 Minutes | Includes LED Therapy</p>
-            <p>
-                Our most popular treatment. Perfect for first-time clients or
-                monthly maintenance. Includes deep cleanse, custom enzyme,
-                extractions, massage, and hydrojelly mask.
-            </p>
-            <a href="/contact" class="btn btn-primary">Book Now</a>
-        </div>
-
-        <div class="faq-section">
-            <h3>Frequently Asked Questions</h3>
-            <details>
-                <summary>How often should I get a facial?</summary>
-                <p>
-                    For best results, we recommend a monthly maintenance facial
-                    to keep your skin cycle regulated. However, even quarterly
-                    treatments can make a significant difference.
-                </p>
-            </details>
-            <details>
-                <summary>Will I break out after?</summary>
-                <p>
-                    It is possible to experience a small "purge" after a deep
-                    cleanse, but this typically clears within 48 hours, leaving
-                    clear, radiant skin.
-                </p>
-            </details>
+        <div class="cta-block">
+            <a href="/contact" class="btn btn-primary">Book Your Facial</a>
         </div>
     </div>
 </ServiceLayout>
 
 <style>
-    h2 {
-        margin-bottom: var(--space-md);
+    .intro-text {
         text-align: center;
-    }
-
-    .service-detail {
+        max-width: 700px;
+        margin: 0 auto var(--space-xl);
         font-size: 1.1rem;
-        color: var(--color-sage-800);
     }
 
-    .feature-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    .services-menu {
+        display: flex;
+        flex-direction: column;
         gap: var(--space-md);
-        margin: var(--space-lg) 0;
+        margin-bottom: var(--space-xl);
     }
 
-    .feature-item h3 {
-        font-size: 1.25rem;
-        color: var(--color-gold-500);
-        margin-bottom: 0.5rem;
-    }
-
-    .pricing-card {
-        border: 1px solid var(--color-sage-100);
+    .service-item {
+        background: white;
         padding: var(--space-lg);
-        text-align: center;
-        margin: var(--space-xl) 0;
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
+        border-radius: 8px;
+        box-shadow: var(--shadow-sm);
+        border-left: 4px solid var(--color-sage-100);
+        transition: all var(--transition-fast);
+    }
+
+    .service-item:hover {
+        transform: translateX(5px);
+        box-shadow: var(--shadow-md);
+    }
+
+    .service-item.featured {
+        border-left-color: var(--color-gold-400);
+        background: var(--color-cream-50);
+    }
+
+    .service-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: var(--space-sm);
+        flex-wrap: wrap;
+        gap: var(--space-sm);
+    }
+
+    .service-header h3 {
+        margin: 0;
+        color: var(--color-sage-900);
+    }
+
+    .service-meta {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.25rem;
     }
 
     .price {
-        font-size: 2rem;
         font-family: var(--font-heading);
-        color: var(--color-sage-900);
-        margin: var(--space-sm) 0;
-    }
-
-    /* FAQ Styles */
-    .faq-section {
-        margin-top: var(--space-xl);
-    }
-
-    details {
-        border-bottom: 1px solid var(--color-sage-100);
-        padding: var(--space-sm) 0;
-        cursor: pointer;
-    }
-
-    summary {
-        font-weight: 700;
-        list-style: none; /* Hide default arrow */
-        position: relative;
-        padding-right: 2rem;
-    }
-
-    summary::after {
-        content: "+";
-        position: absolute;
-        right: 0;
+        font-size: 1.25rem;
         color: var(--color-gold-500);
+        font-weight: 700;
     }
 
-    details[open] summary::after {
-        content: "-";
-    }
-
-    details p {
-        margin-top: var(--space-sm);
-        font-size: 1rem;
+    .duration {
+        font-size: 0.9rem;
         color: var(--color-text-muted);
+    }
+
+    .cta-block {
+        text-align: center;
+        padding: var(--space-lg);
+        background: var(--color-sage-50);
+        border-radius: 8px;
+    }
+
+    @media (max-width: 600px) {
+        .service-header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .service-meta {
+            align-items: flex-start;
+        }
     }
 </style>

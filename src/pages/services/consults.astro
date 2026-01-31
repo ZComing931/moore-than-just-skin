@@ -1,0 +1,228 @@
+---
+import ServiceLayout from "../../layouts/ServiceLayout.astro";
+
+const serviceData = {
+    title: "Skin Consultations | Moore than Just skin",
+    description:
+        "Book a complimentary first consultation to discuss your skin concerns and create a personalized treatment plan.",
+    heroImage: "/images/facial.png",
+    serviceName: "Consultations",
+};
+---
+
+<ServiceLayout {...serviceData}>
+    <div class="service-detail reveal-on-scroll">
+        <p class="intro-text">
+            Not sure where to start? Book a consultation to assess your skin,
+            discuss your concerns, and create a personalized treatment plan.
+            Your <strong>first consultation is always free</strong>.
+        </p>
+
+        <div class="services-menu">
+            <!-- General Consult -->
+            <div class="service-item featured">
+                <div class="service-header">
+                    <h3>General Skin Consult</h3>
+                    <div class="service-meta">
+                        <span class="price">FREE (First) / $50 (Follow-up)</span
+                        >
+                        <span class="duration">20 min</span>
+                    </div>
+                </div>
+                <p>
+                    A full assessment of your skin, your concerns, and your
+                    goals. We will make a plan to reach those goals focusing on
+                    a natural refreshed look, budget, timeline, and
+                    expectations. If you would like to do treatment same day,
+                    then please book a consultation and a treatment.
+                </p>
+                <p class="highlight-text">
+                    We are so excited to discuss your skin! The FIRST consult is
+                    free, then if you want another one, we will still be excited
+                    to talk about your skin, but we do charge $50 for a follow
+                    up consult.
+                </p>
+            </div>
+
+            <!-- Acne Consult -->
+            <div class="service-item">
+                <div class="service-header">
+                    <h3>Acne Consult</h3>
+                    <div class="service-meta">
+                        <span class="price">FREE (First) / $50 (Follow-up)</span
+                        >
+                        <span class="duration">20 min</span>
+                    </div>
+                </div>
+                <p>
+                    A physical assessment of your acne concerns: assessing if it
+                    is active acne, scars, or cystic acne. A plan will be made
+                    that can include laser, microneedling and a topical regime.
+                    Your first consultation is free—additional sessions are just
+                    $50 each.
+                </p>
+            </div>
+
+            <!-- Melasma Consult -->
+            <div class="service-item">
+                <div class="service-header">
+                    <h3>Melasma Consult</h3>
+                    <div class="service-meta">
+                        <span class="price">FREE (First) / $50 (Follow-up)</span
+                        >
+                        <span class="duration">20 min</span>
+                    </div>
+                </div>
+                <p>
+                    Melasma is brown spots on the skin. It can be caused from
+                    hormones, sun, heat, pregnancy, and genetics. During the
+                    consult a plan will be made that may include laser,
+                    microneedling, and topical medications to help treat and
+                    prevent melasma. Your first consultation is free—additional
+                    sessions are just $50 each.
+                </p>
+            </div>
+        </div>
+
+        <div class="info-block">
+            <h3>What to Expect</h3>
+            <ul class="expectations-list">
+                <li>In-depth skin analysis</li>
+                <li>Discussion of concerns and goals</li>
+                <li>Personalized treatment recommendations</li>
+                <li>Product and home care guidance</li>
+                <li>Honest timeline and budget planning</li>
+            </ul>
+        </div>
+
+        <div class="cta-block">
+            <a href="/contact" class="btn btn-primary">Book Free Consultation</a
+            >
+        </div>
+    </div>
+</ServiceLayout>
+
+<style>
+    .intro-text {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto var(--space-xl);
+        font-size: 1.1rem;
+    }
+
+    .services-menu {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-md);
+        margin-bottom: var(--space-xl);
+    }
+
+    .service-item {
+        background: white;
+        padding: var(--space-lg);
+        border-radius: 8px;
+        box-shadow: var(--shadow-sm);
+        border-left: 4px solid var(--color-sage-100);
+        transition: all var(--transition-fast);
+    }
+
+    .service-item:hover {
+        transform: translateX(5px);
+        box-shadow: var(--shadow-md);
+    }
+
+    .service-item.featured {
+        border-left-color: var(--color-gold-400);
+        background: var(--color-cream-50);
+    }
+
+    .service-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: var(--space-sm);
+        flex-wrap: wrap;
+        gap: var(--space-sm);
+    }
+
+    .service-header h3 {
+        margin: 0;
+        color: var(--color-sage-900);
+    }
+
+    .service-meta {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.25rem;
+    }
+
+    .price {
+        font-family: var(--font-heading);
+        font-size: 1rem;
+        color: var(--color-gold-500);
+        font-weight: 700;
+    }
+
+    .duration {
+        font-size: 0.9rem;
+        color: var(--color-text-muted);
+    }
+
+    .highlight-text {
+        margin-top: var(--space-sm);
+        padding: var(--space-sm);
+        background: var(--color-sage-50);
+        border-left: 3px solid var(--color-gold-400);
+        border-radius: 4px;
+        font-style: italic;
+    }
+
+    .info-block {
+        background: var(--color-sage-50);
+        padding: var(--space-lg);
+        border-radius: 8px;
+        margin-bottom: var(--space-lg);
+    }
+
+    .info-block h3 {
+        text-align: center;
+        margin-bottom: var(--space-md);
+    }
+
+    .expectations-list {
+        list-style: none;
+        padding: 0;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .expectations-list li {
+        padding: 0.5rem 0 0.5rem 2rem;
+        position: relative;
+    }
+
+    .expectations-list li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--color-gold-500);
+        font-weight: 700;
+        font-size: 1.2rem;
+    }
+
+    .cta-block {
+        text-align: center;
+        padding: var(--space-lg);
+    }
+
+    @media (max-width: 600px) {
+        .service-header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .service-meta {
+            align-items: flex-start;
+        }
+    }
+</style>
